@@ -1,0 +1,23 @@
+package assignment1;
+
+public class InsufficientFundException extends Exception {
+	
+	int balance;
+
+	public InsufficientFundException(int balance) {
+
+		super();
+
+		this.balance = balance;
+
+	}
+
+	 
+		public String errorMsg()
+
+		{
+			return "Your balance "+balance+" is low";
+
+		}
+
+	}
