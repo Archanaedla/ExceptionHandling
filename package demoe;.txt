@@ -1,0 +1,61 @@
+package demoe;
+import java.util.Scanner;
+
+
+class InsufficientFundException extends Exception{
+
+	public InsufficientFundException(String s) {
+		
+	}
+
+}
+
+public class Demo1 {
+	
+		public void getOrder(int orderAmount)throws InsufficientFundException{
+
+			if(orderAmount<100) {
+
+				throw new InsufficientFundException(orderAmount+"less amount");
+
+			}
+
+			else {
+
+				System.out.println("Sucessfull");
+
+			}
+
+		}
+
+		public static void main(String[] args)throws InsufficientFundException {
+
+			Demo1 d=new Demo1();
+
+			Scanner sc=new Scanner(System.in);
+
+			System.out.println("Enter the amount : ");
+
+			int orderAmount=sc.nextInt();
+
+			try {
+
+				d.getOrder(orderAmount);
+
+			}
+
+			catch(InsufficientFundException i) {
+
+				i.printStackTrace();
+
+			}
+
+			
+
+		}
+
+	}
+
+	 
+
+
